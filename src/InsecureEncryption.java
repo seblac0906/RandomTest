@@ -22,7 +22,7 @@ public class InsecureEncryption {
             // ❌ INSECURE: random byte generation with Math.random()
             byte[] keyBytes = new byte[32]; // 256 Bit
             for (int i = 0; i < keyBytes.length; i++) {
-                keyBytes[i] = (byte) (Math.random() * 256);
+                keyBytes[i] = (byte) (java.lang.Math.random() * 256);
             }
 
             // Creating a secret key
