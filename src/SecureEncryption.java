@@ -6,13 +6,26 @@ import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 import java.security.SecureRandom;
 import java.security.Security;
+import java.util.Arrays;
 
 public class SecureEncryption {
+
+    // For testing the JCA Visitor (AST) only
+    private static SecretKey x;
+
+    // For testing the JCA Visitor (AST) only
+    private SecretKey y;
+
+    // For testing the JCA Visitor (AST) only
+    public void tmp(SecretKey key) {
+        System.out.println("Key: " + Arrays.toString(key.getEncoded()));
+    }
+
     public static void main(String[] args) {
         // Set Bouncy Castle as security provider
         Security.addProvider(new BouncyCastleProvider());
 
-        // ✅ Secure random number generator for cryptographic operations
+        // Secure random number generator for cryptographic operations
         SecureRandom random = new SecureRandom();
 
         // Input for encryption
